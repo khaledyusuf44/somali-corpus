@@ -1,0 +1,326 @@
+{
+  "n_iter": 500,
+  "seed": 0,
+  "test_set": "language-id-practice/data/multilingual_samples.csv (200 rows, 40 per class)",
+  "method": "Reconstructed per-row predictions from reports/lid_comparison.md per-class TP/FP/FN; resampled with replacement.",
+  "models": {
+    "fasttext_lid176": {
+      "point_estimates": {
+        "en": {
+          "precision": 0.5588,
+          "recall": 0.95,
+          "f1": 0.7037,
+          "f1_published": 0.7037
+        },
+        "so": {
+          "precision": 1.0,
+          "recall": 0.075,
+          "f1": 0.1395,
+          "f1_published": 0.1395
+        },
+        "ar": {
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9474,
+          "f1_published": 0.9474
+        },
+        "fr": {
+          "precision": 0.9459,
+          "recall": 0.875,
+          "f1": 0.9091,
+          "f1_published": 0.9091
+        },
+        "sw": {
+          "precision": 1.0,
+          "recall": 0.2,
+          "f1": 0.3333,
+          "f1_published": 0.3333
+        }
+      },
+      "bootstrap_ci": {
+        "en": {
+          "precision_95": [
+            0.4384,
+            0.6812
+          ],
+          "recall_95": [
+            0.8684,
+            1.0
+          ],
+          "f1_95": [
+            0.5957,
+            0.7965
+          ]
+        },
+        "so": {
+          "precision_95": [
+            0.0,
+            1.0
+          ],
+          "recall_95": [
+            0.0,
+            0.1667
+          ],
+          "f1_95": [
+            0.0,
+            0.2857
+          ]
+        },
+        "ar": {
+          "precision_95": [
+            1.0,
+            1.0
+          ],
+          "recall_95": [
+            0.8,
+            0.9762
+          ],
+          "f1_95": [
+            0.8889,
+            0.988
+          ]
+        },
+        "fr": {
+          "precision_95": [
+            0.8621,
+            1.0
+          ],
+          "recall_95": [
+            0.7576,
+            0.9697
+          ],
+          "f1_95": [
+            0.8267,
+            0.9655
+          ]
+        },
+        "sw": {
+          "precision_95": [
+            1.0,
+            1.0
+          ],
+          "recall_95": [
+            0.0811,
+            0.3429
+          ],
+          "f1_95": [
+            0.15,
+            0.5106
+          ]
+        }
+      }
+    },
+    "langdetect": {
+      "point_estimates": {
+        "en": {
+          "precision": 0.963,
+          "recall": 0.65,
+          "f1": 0.7761,
+          "f1_published": 0.7761
+        },
+        "so": {
+          "precision": 0.8261,
+          "recall": 0.95,
+          "f1": 0.8837,
+          "f1_published": 0.8837
+        },
+        "ar": {
+          "precision": 1.0,
+          "recall": 0.975,
+          "f1": 0.9873,
+          "f1_published": 0.9873
+        },
+        "fr": {
+          "precision": 0.9615,
+          "recall": 0.625,
+          "f1": 0.7576,
+          "f1_published": 0.7576
+        },
+        "sw": {
+          "precision": 0.9688,
+          "recall": 0.775,
+          "f1": 0.8611,
+          "f1_published": 0.8611
+        }
+      },
+      "bootstrap_ci": {
+        "en": {
+          "precision_95": [
+            0.8846,
+            1.0
+          ],
+          "recall_95": [
+            0.4894,
+            0.8095
+          ],
+          "f1_95": [
+            0.6522,
+            0.8837
+          ]
+        },
+        "so": {
+          "precision_95": [
+            0.6981,
+            0.9286
+          ],
+          "recall_95": [
+            0.8727,
+            1.0
+          ],
+          "f1_95": [
+            0.7957,
+            0.9451
+          ]
+        },
+        "ar": {
+          "precision_95": [
+            1.0,
+            1.0
+          ],
+          "recall_95": [
+            0.9118,
+            1.0
+          ],
+          "f1_95": [
+            0.9538,
+            1.0
+          ]
+        },
+        "fr": {
+          "precision_95": [
+            0.8788,
+            1.0
+          ],
+          "recall_95": [
+            0.4688,
+            0.7742
+          ],
+          "f1_95": [
+            0.6269,
+            0.8627
+          ]
+        },
+        "sw": {
+          "precision_95": [
+            0.8929,
+            1.0
+          ],
+          "recall_95": [
+            0.6327,
+            0.8913
+          ],
+          "f1_95": [
+            0.7632,
+            0.9315
+          ]
+        }
+      }
+    },
+    "glotlid_v3": {
+      "point_estimates": {
+        "en": {
+          "precision": 0.9355,
+          "recall": 0.725,
+          "f1": 0.8169,
+          "f1_published": 0.8169
+        },
+        "so": {
+          "precision": 0.9667,
+          "recall": 0.725,
+          "f1": 0.8286,
+          "f1_published": 0.8286
+        },
+        "ar": {
+          "precision": 1.0,
+          "recall": 0.9,
+          "f1": 0.9474,
+          "f1_published": 0.9474
+        },
+        "fr": {
+          "precision": 1.0,
+          "recall": 0.625,
+          "f1": 0.7692,
+          "f1_published": 0.7692
+        },
+        "sw": {
+          "precision": 1.0,
+          "recall": 0.725,
+          "f1": 0.8406,
+          "f1_published": 0.8406
+        }
+      },
+      "bootstrap_ci": {
+        "en": {
+          "precision_95": [
+            0.8462,
+            1.0
+          ],
+          "recall_95": [
+            0.5938,
+            0.8636
+          ],
+          "f1_95": [
+            0.7188,
+            0.9032
+          ]
+        },
+        "so": {
+          "precision_95": [
+            0.8919,
+            1.0
+          ],
+          "recall_95": [
+            0.5806,
+            0.8571
+          ],
+          "f1_95": [
+            0.7119,
+            0.9189
+          ]
+        },
+        "ar": {
+          "precision_95": [
+            1.0,
+            1.0
+          ],
+          "recall_95": [
+            0.7879,
+            0.9762
+          ],
+          "f1_95": [
+            0.8814,
+            0.988
+          ]
+        },
+        "fr": {
+          "precision_95": [
+            1.0,
+            1.0
+          ],
+          "recall_95": [
+            0.4615,
+            0.7692
+          ],
+          "f1_95": [
+            0.6316,
+            0.8696
+          ]
+        },
+        "sw": {
+          "precision_95": [
+            1.0,
+            1.0
+          ],
+          "recall_95": [
+            0.5758,
+            0.871
+          ],
+          "f1_95": [
+            0.7308,
+            0.931
+          ]
+        }
+      }
+    }
+  }
+}
