@@ -62,15 +62,6 @@ somali-corpus/
 │   ├── baseline_overlap_report.py│
 │   ├── robots_audit.py           │
 │   └── fetch_flores.py           │
-├── paper/                        ← manuscript build tree (markdown + LaTeX + figures)
-│   ├── somali-web-corpus-v2.md   ← long-paper draft (TACL/ACL/LREC target)
-│   ├── skeleton.tex              ← ACL 2024 LaTeX skeleton
-│   ├── refs.bib                  ← bibliography
-│   ├── Makefile                  ← `make figs` / `make skeleton`
-│   ├── tikz/figure1_pipeline.tex ← pipeline flow diagram
-│   ├── scripts/figure{2..6}_*.py ← matplotlib figure scripts
-│   ├── figures/                  ← rendered PDF + PNG
-│   └── README.md                 ← paper workspace usage
 ├── reports/                      ← per-phase metrics + findings (committed)
 │   ├── 01..06_*.{md,json}
 │   ├── baseline_comparison.md    ← raw-source characterization
@@ -135,7 +126,7 @@ Approximate run times on an Apple M4 Pro / 24 GB RAM:
 
 ## Dataset card and usage
 
-The Hugging Face dataset card lives at [`data/release/README.md`](data/release/README.md) (a copy is on the HF repo). Python usage:
+The Hugging Face dataset card lives at [huggingface.co/datasets/khaledyusuf44/somaliweb-v1](https://huggingface.co/datasets/khaledyusuf44/somaliweb-v1). Python usage:
 
 ```python
 from datasets import load_dataset
@@ -152,7 +143,7 @@ Produced corpus: CC-BY-SA 4.0 (inherits Somali Wikipedia's license; see dataset 
 
 ## Citation
 
-See the [dataset card](data/release/README.md#citation) for the BibTeX entry.
+See the [dataset card on Hugging Face](https://huggingface.co/datasets/khaledyusuf44/somaliweb-v1#citation) for the BibTeX entry. A `CITATION.cff` file at the repo root is also recognized by GitHub's "Cite this repository" widget.
 
 ## Acknowledgments
 
