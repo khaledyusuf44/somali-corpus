@@ -354,36 +354,43 @@ Strong and concrete — three measurable findings baked in before we write a lin
 - `data/eval/flores_so.dev.txt` · `flores_so.devtest.txt` (FLORES-200 Somali held-out)
 - `reports/06_evaluation.md` (the paper-shaped results section)
 - `pipeline/06_structure_release.py`
-## Phase 7 — Release + paper  ·  `in progress` (draft complete, awaiting HF upload)
+## Phase 7 — Release  ·  `done` (2026-04-26)
 
-**Goal.** Dataset card on Hugging Face, GitHub README, 6-page workshop-style paper draft. HF upload deferred pending user's `huggingface-cli login` token.
+**Goal.** Publish code on GitHub and the corpus + tokenizer on Hugging Face.
 
-**Work done (2026-04-23):**
+**Work done (2026-04-26):**
 
-**Dataset card** — `data/release/README.md` (will be the HF dataset-repo README):
+**Dataset card** — `data/release/README.md` (the HF dataset-repo README):
 - YAML front matter with HF metadata (license, language, size, tags, configs pointing to train/validation split).
 - Full Datasets-style card: summary · motivation · structure · data fields · splits · pipeline overview with per-phase numbers · evaluation table · limitations · usage · citation.
 - All numbers populated from Phase 0-6 reports.
+- PII warning empirically updated: ~7.9% of release docs contain at least one email-shaped string.
 
-**GitHub project README** — `README.md`:
-- Headline numbers table, repository layout, one-hour reproduction recipe, approximate Phase-by-Phase run times on M4 Pro, license.
-- Links to PLAN.md · decisions.md · progress.md · dataset card.
+**GitHub repo** — https://github.com/khaledyusuf44/somali-corpus
+- 38 files committed, MIT licensed (code), tagged `v1.0.0`.
+- `LICENSE`, `CITATION.cff`, badge-decorated `README.md`, pinned `requirements.txt`, `run_pipeline.py` unified runner.
+- The paper workspace and personal study notes are gitignored (kept locally only — paper stays private until camera-ready).
 
-**Workshop paper draft** — `paper/somali-web-corpus.md`:
-- 6-section structure: abstract · intro · related work · methodology · results · limitations · conclusion · references.
-- Headline contributions: (i) the corpus itself, (ii) HPLT quality-gap measurements, (iii) Somali LID benchmark, (iv) 40.2% tokenizer fertility reduction vs GPT-4.
-- Written in Markdown; convert to LaTeX at submission.
-
-**Remaining work (requires user action):**
-- Run `huggingface-cli login` with user's HF token.
-- Run `huggingface-cli repo create somaliweb-v1 --type dataset` (or via web UI).
-- Push `data/release/{train,validation}.jsonl`, `tokenizer_somaliweb.json`, and `README.md` to the HF dataset repo.
-- Optionally create a GitHub repo for the pipeline code and push.
+**HF dataset** — https://huggingface.co/datasets/khaledyusuf44/somaliweb-v1
+- `train.jsonl` (1.5 GB), `validation.jsonl` (80 MB), `tokenizer_somaliweb.json` (BPE-16K), `tokenizer_hplt_raw.json` (comparison), `manual_inspection_sample.jsonl`, `SHASUMS`, dataset card.
+- HF username harmonized with GitHub: `khaledyusuf44`.
 
 **Artifacts shipped in this phase:**
-- `data/release/README.md` (HF dataset card)
-- `README.md` (GitHub landing page)
-- `paper/somali-web-corpus.md` (workshop draft)
-## Phase 8 — Evaluation  ·  `not started`
-## Phase 9 — Release (HuggingFace + GitHub)  ·  `not started`
-## Phase 10 — Paper writeup  ·  `not started`
+- `LICENSE`, `CITATION.cff`, `data/release/SHASUMS` (SHA-256 manifest of release artifacts).
+- All v1.0.0 deliverables live at the two URLs above.
+
+## Phase 8 — Paper finalization  ·  `in progress` (private workspace)
+
+**Goal.** Polish the long-paper draft + ablations to camera-ready, then submit.
+
+Workspace: `paper/` (local, gitignored). Target venues in order: TACL → ACL/EMNLP main Resources track → LREC-COLING. arXiv preprint to be filed in parallel with first submission.
+
+**Outstanding before submission** (from `paper/README.md` checklist):
+- Bootstrap 95% CIs on LID F1 (500 resamples).
+- Phase-removal ablations → tokenizer fertility delta per phase.
+- Train a 1-layer char-LM on each ablated corpus; report val loss.
+- Second Somali annotator on LID test set; report Cohen's κ.
+- 100-doc rubric audit (5-point Likert per axis).
+- Convert markdown to LaTeX via existing `paper/skeleton.tex`.
+
+The paper directory will only become public alongside arXiv/venue submission.
