@@ -1,0 +1,30 @@
+{
+  "phase": "01_merge_and_dedup",
+  "elapsed_s": 82.6,
+  "total_input_docs": 1372052,
+  "total_output_docs": 1182360,
+  "total_drops": 189692,
+  "drop_rate": 0.1383,
+  "within_source_dup_drops": {
+    "wikipedia-so": 14,
+    "cc100-so": 21783,
+    "hplt2-so": 166628
+  },
+  "cross_source_dup_drops": {
+    "wikipedia-so": 0,
+    "cc100-so": 12,
+    "hplt2-so": 1255
+  },
+  "per_source_input": {
+    "wikipedia-so": 9021,
+    "cc100-so": 396524,
+    "hplt2-so": 966507
+  },
+  "per_source_kept": {
+    "wikipedia-so": 9007,
+    "cc100-so": 374729,
+    "hplt2-so": 798624
+  },
+  "output_file": "/Users/khalidyusufdahir/Desktop/projects/ai_projects/somali-corpus/data/pipeline/01_merged_dedup.jsonl",
+  "output_file_mb": 2445.86
+}

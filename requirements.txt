@@ -1,0 +1,35 @@
+# SomaliWeb v1 — pinned package versions.
+#
+# Install:
+#   python3 -m venv .venv && source .venv/bin/activate
+#   pip install -r requirements.txt
+#
+# `numpy<2` is required because `fasttext-wheel` (Phase 0.2 LID benchmark, Phase 3
+# dialect tagging) was built against the NumPy 1.x ABI and crashes on NumPy 2.
+
+numpy<2
+pandas
+
+# Phase 0.1 / 0.6 dataset acquisition
+datasets>=2.19,<3
+huggingface_hub
+
+# Phase 0.4 source decompression
+zstandard>=0.22
+
+# Phase 2 mojibake repair
+ftfy>=6.1
+
+# Phase 3 LID + dialect tagging
+langdetect==1.0.9
+fasttext-wheel
+
+# Phase 6 tokenizer training + fertility comparison
+tokenizers>=0.15
+tiktoken>=0.7
+
+# Plotting (paper figures 2-6)
+matplotlib
+
+# Optional dev helpers
+pytest

@@ -1,0 +1,32 @@
+{
+  "phase": "02_clean",
+  "elapsed_s": 1997.7,
+  "min_words_threshold": 50,
+  "input_docs": 1182360,
+  "output_docs": 1080040,
+  "drop_total": 102320,
+  "drop_rate": 0.0865,
+  "drops_by_reason": {
+    "too_short": 102320
+  },
+  "mojibake_fixed_docs": 615314,
+  "mojibake_fixed_fraction": 0.5204,
+  "mojibake_fixed_by_source": {
+    "wikipedia-so": 871,
+    "cc100-so": 166707,
+    "hplt2-so": 447736
+  },
+  "repeated_char_runs_collapsed_docs": 39146,
+  "per_source_input": {
+    "wikipedia-so": 9007,
+    "cc100-so": 374729,
+    "hplt2-so": 798624
+  },
+  "per_source_kept": {
+    "wikipedia-so": 5683,
+    "cc100-so": 275744,
+    "hplt2-so": 798613
+  },
+  "output_file": "/Users/khalidyusufdahir/Desktop/projects/ai_projects/somali-corpus/data/pipeline/02_cleaned.jsonl",
+  "output_file_mb": 2449.15
+}

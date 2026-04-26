@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Editor / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Project-specific data — large generated artifacts, do not commit
+data/downloads/
+data/baselines/
+data/extracted/
+data/pipeline/
+data/release/
+data/eval/
+
+# Models — fastText / tokenizer binaries pulled at runtime
+models/*.bin
+models/*.ftz
+
+# Paper — entire workspace stays private until camera-ready (post-submission).
+# Includes draft markdown, LaTeX, figures, bibliography, and all build artifacts.
+paper/
+
+# Personal study / coaching notes — not for public consumption.
+notes/learning_plan.md
+
+# Misc
+*.tmp
+.tagging.tmp

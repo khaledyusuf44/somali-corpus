@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+title: "SomaliWeb v1 — A Quality-Filtered Somali Web Corpus with a Matched Tokenizer"
+message: >-
+  If you use this corpus, the tokenizer, or the construction pipeline,
+  please cite the corresponding work using the metadata below.
+type: dataset
+authors:
+  - family-names: Dahir
+    given-names: Khaled Yusuf
+    email: khaliddahir0200@gmail.com
+identifiers:
+  - type: url
+    value: https://huggingface.co/datasets/khaledyusuf44/somaliweb-v1
+    description: Hugging Face dataset
+  - type: url
+    value: https://github.com/khaledyusuf44/somali-corpus
+    description: Pipeline source code
+repository-code: https://github.com/khaledyusuf44/somali-corpus
+url: https://huggingface.co/datasets/khaledyusuf44/somaliweb-v1
+abstract: >-
+  SomaliWeb v1 is the first dedicated, versioned, documented Somali pretraining
+  corpus: 819,322 documents and approximately 303 million tokens, aggregated
+  from HPLT v2, CC100, and Somali Wikipedia, then passed through a six-stage
+  reproducible pipeline (byte-exact dedup, mojibake repair, language-ID
+  verification, MinHash + LSH near-dedup at Jaccard tau = 0.80, character-5-gram
+  quality filtering, BPE-16K tokenizer training). The release ships with a
+  matched BPE-16K tokenizer that is 40.2% more token-efficient than GPT-4's
+  cl100k_base on FLORES-200 Somali devtest, and the first public per-class
+  Somali language-identification benchmark across langdetect, GlotLID v3, and
+  fastText lid.176.
+keywords:
+  - Somali
+  - low-resource NLP
+  - pretraining corpus
+  - language identification
+  - tokenizer fertility
+  - MinHash
+  - deduplication
+  - Horn of Africa
+  - African NLP
+license: MIT
+license-url: https://github.com/khaledyusuf44/somali-corpus/blob/main/LICENSE
+version: "1.0.0"
+date-released: "2026-04-26"

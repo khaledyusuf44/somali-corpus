@@ -1,0 +1,64 @@
+# SomaliWeb v1 pipeline config — single source of truth for all knobs.
+# Changed knobs are recorded in notes/progress.md under the affected phase.
+
+version: "v1.0"
+seed: 0
+
+sources:
+  wikipedia:
+    path: data/extracted/wikipedia_so.jsonl
+    name: wikipedia-so
+  cc100:
+    path: data/baselines/cc100_so.jsonl
+    name: cc100-so
+  hplt2:
+    path: data/baselines/hplt2_so.jsonl
+    name: hplt2-so
+
+paths:
+  pipeline: data/pipeline
+  release:  data/release
+  reports:  reports
+
+phase1_merge_dedup:
+  # lowercase + whitespace collapse, no punctuation strip (Phase 2 handles punct).
+  strip_punct: false
+  keep_rule: "first-seen"
+
+phase2_clean:
+  fix_mojibake: true                 # ftfy
+  min_words_after_clean: 50          # matches HPLT's own floor
+  collapse_whitespace: true
+  strip_repeated_char_runs: true     # e.g. "hellooooo" -> "helloo"
+
+phase3_lid:
+  primary: langdetect
+  min_confidence: 0.50
+  dialect_tag_with_glotlid: true     # som_Latn vs ymm_Latn
+
+phase4_near_dedup:
+  # Reuses minhash-dedup-practice pipeline.
+  shingle_k: 3
+  shingle_mode: word
+  k_hashes: 64
+  band_b: 16
+  band_r: 4
+  tau: 0.80
+  keep_rule: "longest"
+
+phase5_quality_filter:
+  # Character-n-gram set coverage against a clean Wikipedia-so seed.
+  # (Plan originally said "KN-smoothed LM" — we shipped set-coverage instead;
+  #  zero negatives required, interpretable, faster. See pipeline/05_quality_filter.py.)
+  ngram_n: 5
+  scoring: char_ngram_set_coverage
+  seed_sources:
+    - wikipedia-so
+  min_seed_word_count: 200           # drop stub articles from the seed
+  drop_bottom_fraction: 0.15         # quantile cut → empirically threshold ≈ 0.9029
+
+phase6_release:
+  train_fraction: 0.95
+  shuffle_seed: 0
+  tokenizer_vocab_sizes: [4000, 16000]
+  eval_fertility_against: ["hplt2-so"]
