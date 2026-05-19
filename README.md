@@ -1,10 +1,13 @@
 # somali-corpus — SomaliWeb v1 pipeline
 
+[![arXiv](https://img.shields.io/badge/arXiv-2605.18232-b31b1b.svg)](https://arxiv.org/abs/2605.18232)
 [![HF Dataset](https://img.shields.io/badge/🤗%20HF%20Dataset-khaledyusuf44%2Fsomaliweb--v1-yellow)](https://huggingface.co/datasets/khaledyusuf44/somaliweb-v1)
 [![Code License: MIT](https://img.shields.io/badge/Code%20License-MIT-blue.svg)](LICENSE)
 [![Data License: CC-BY-SA 4.0](https://img.shields.io/badge/Data%20License-CC--BY--SA%204.0-green.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 [![Python 3.9+](https://img.shields.io/badge/Python-3.9+-3776AB.svg)](https://www.python.org/)
 [![Release v1.0.0](https://img.shields.io/badge/Release-v1.0.0-orange.svg)](https://github.com/khaledyusuf44/somali-corpus/releases/tag/v1.0.0)
+
+**📄 Paper:** [arXiv:2605.18232](https://arxiv.org/abs/2605.18232) — *SomaliWeb v1: A Quality-Filtered Somali Web Corpus with a Matched Tokenizer and a Public Language-Identification Benchmark*
 
 End-to-end pipeline for building **SomaliWeb v1**, a quality-filtered Somali web corpus of ~303M tokens, published on Hugging Face at [`khaledyusuf44/somaliweb-v1`](https://huggingface.co/datasets/khaledyusuf44/somaliweb-v1).
 
@@ -143,7 +146,21 @@ Produced corpus: CC-BY-SA 4.0 (inherits Somali Wikipedia's license; see dataset 
 
 ## Citation
 
-See the [dataset card on Hugging Face](https://huggingface.co/datasets/khaledyusuf44/somaliweb-v1#citation) for the BibTeX entry. A `CITATION.cff` file at the repo root is also recognized by GitHub's "Cite this repository" widget.
+If you use SomaliWeb v1, the matched tokenizer, the LID benchmark, or this pipeline, please cite:
+
+```bibtex
+@article{dahir2026somaliweb,
+  title         = {SomaliWeb v1: A Quality-Filtered Somali Web Corpus with a Matched Tokenizer and a Public Language-Identification Benchmark},
+  author        = {Dahir, Khalid Yusuf},
+  year          = {2026},
+  eprint        = {2605.18232},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2605.18232}
+}
+```
+
+A `CITATION.cff` file at the repo root is also recognized by GitHub's "Cite this repository" widget. The Hugging Face dataset card mirrors this BibTeX.
 
 ## Acknowledgments
 

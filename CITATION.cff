@@ -8,7 +8,22 @@ authors:
   - family-names: Dahir
     given-names: Khalid Yusuf
     email: khaliddahir0200@gmail.com
+preferred-citation:
+  type: article
+  title: "SomaliWeb v1: A Quality-Filtered Somali Web Corpus with a Matched Tokenizer and a Public Language-Identification Benchmark"
+  authors:
+    - family-names: Dahir
+      given-names: Khalid Yusuf
+  year: 2026
+  journal: "arXiv preprint arXiv:2605.18232"
+  url: "https://arxiv.org/abs/2605.18232"
 identifiers:
+  - type: other
+    value: "arXiv:2605.18232"
+    description: arXiv preprint
+  - type: url
+    value: https://arxiv.org/abs/2605.18232
+    description: arXiv paper
   - type: url
     value: https://huggingface.co/datasets/khaledyusuf44/somaliweb-v1
     description: Hugging Face dataset
